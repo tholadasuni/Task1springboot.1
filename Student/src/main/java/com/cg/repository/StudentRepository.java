@@ -1,17 +1,11 @@
-
-
 package com.cg.repository;
 
-import java.util.List;
-
+import com.cg.entity.Student;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.cg.entity.Student;
+public interface StudentRepository extends MongoRepository<Student, String> {
 
-public interface StudentRepository extends MongoRepository < Student, Long>{
+    Student findByName(String name);
 
- public	List<Student> findStudentByName(String name);
-	
-
+    void deleteByName(String name);
 }
-
